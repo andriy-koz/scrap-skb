@@ -24,14 +24,6 @@ const PartsList = () => {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Box sx={ButtonsBox(true)}>
-        <Link href={'/'}>
-          <Button variant='contained'>
-            <ArrowBackIcon />
-            VOLVER
-          </Button>
-        </Link>
-      </Box>
       <List
         sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: '80%' }}
         dense={false}>
@@ -75,10 +67,9 @@ const PartsList = () => {
           <ListItemText primary='Single-line item' />
         </ListItem>
       </List>
-      <Box sx={ButtonsBox(false)}>
-        <Button variant='outlined'>Borrar todo</Button>
-        <Button variant='contained'>Exportar</Button>
-      </Box>
+      <Button variant='outlined' sx={{ width: '80%', marginTop: 4 }}>
+        borrar todo
+      </Button>
     </Box>
   );
 };

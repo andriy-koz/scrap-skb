@@ -1,36 +1,28 @@
-import Link from 'next/link';
 import { Box, Typography, Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { ButtonsBox } from '../styles/styles-sx';
 import { blue } from '@mui/material/colors';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Form = () => {
   return (
     <Box
       sx={{
-        height: '75vh',
+        height: '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <Box sx={ButtonsBox(true)}>
-        <Button>
-          <ArrowBackIcon />
-          volver
-        </Button>
-        <Button>a5</Button>
-        <Button>a6</Button>
-      </Box>
+      <Typography variant='h4' component='h2' sx={{ color: blue[800] }}>
+        A4 - T281BX
+      </Typography>
       <Autocomplete
         disablePortal
         options={[
           { label: 'HOLA', id: 1 },
           { label: 'CHAU', id: 2 },
         ]}
-        sx={{ width: '80%', marginTop: 12 }}
+        sx={{ width: '80%', marginTop: 5 }}
         renderInput={params => (
           <TextField {...params} label='Nombre de pieza' />
         )}
@@ -57,11 +49,15 @@ const Form = () => {
         />
         <Button variant='contained'>+</Button>
       </Box>
-      <Box sx={ButtonsBox(false)}>
-        <Link href={'/'}>
-          <Button variant='outlined'>cancelar</Button>
-        </Link>
-        <Button variant='contained'>agregar</Button>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: '80%',
+          marginTop: 12,
+        }}>
+        <Button variant='outlined'>cancelar</Button>
+        <Button variant='contained'>guardar</Button>
       </Box>
     </Box>
   );
